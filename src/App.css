@@ -1,0 +1,556 @@
+*::after,
+*::before,
+body {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
+}
+:root {
+  --main-color: #239df4;
+}
+body {
+  margin: 0;
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: #282c34;
+  caret-color: transparent;
+}
+.headerWrapper {
+  display: flex;
+  width: 100vw;
+  background-color: #192235;
+  height: 50px;
+}
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  margin: 0 auto;
+  caret-color: transparent;
+}
+.mainWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #282c34;
+}
+.menuWrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  height: 30px;
+  width: 30px;
+  caret-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.menu:hover {
+  outline: 2px solid var(--main-color);
+  border-radius: 50%;
+}
+.menu > div {
+  background-color: var(--main-color);
+  height: 2px;
+}
+.heading {
+  display: flex;
+  color: var(--main-color);
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+.settings {
+  position: relative;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.settings > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sideWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  height: 100vh;
+  width: 70px;
+  background-color: #3a4356;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.dropDown {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  width: 220px;
+  background-color: #3a4356;
+  left: -650%;
+  top: 150%;
+  cursor: auto;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.dropDownHeading {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+  color: var(--main-color);
+}
+.themeSlider {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+.textAndIcon {
+  display: flex;
+  align-items: center;
+}
+.profileSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.profileSection > a {
+  text-decoration: none;
+  font-size: 1.1em;
+}
+.themeText {
+  margin-left: 22px;
+}
+.profile {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.profileName {
+  max-width: 66px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.chartWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.chartHeading > h1 {
+  margin: 0;
+}
+
+.stepOne {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.transactionsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.budgetTotal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.budgetTotal > h1 {
+  margin: 0;
+}
+
+.stepsHeading > h1 {
+  font-size: 1.5em;
+  margin: 0;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.chartWrapper > canvas {
+  padding: 15px;
+  width: 325px;
+  height: 325px;
+}
+
+.graphLabelWrapper {
+  position: absolute;
+  left: 32.5%;
+  top: 18%;
+}
+
+.buble {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 60px;
+  background-color: var(--main-color);
+  border-radius: 4%;
+  padding: 0px 25px;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 1px 4px 7px 2px rgba(0, 0, 0, 0.32);
+}
+
+.buble > input,
+select {
+  margin-top: 20px;
+}
+
+.addTransaction {
+  width: 80%;
+  margin: 0 auto;
+  outline: 1px solid black;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  background-color: rgb(255, 72, 136);
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.addTransaction:hover {
+  background-color: transparent;
+  outline: 1px solid rgb(255, 72, 136);
+  color: rgb(255, 72, 136);
+}
+.profileIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #192235;
+}
+.profileIcon > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.manageWrapper {
+  margin-top: 15px;
+}
+
+.manageWrapper,
+.statisticsWrapper {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.manageWrapper:hover,
+.statisticsWrapper:hover {
+  transform: scale(1.2);
+}
+
+.budgetInput {
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--main-color);
+  padding: 6px 8px;
+}
+
+.budgetInput::placeholder {
+  color: var(--main-color);
+  letter-spacing: 1px;
+  font-size: 1.1em;
+}
+
+.sendBudget {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.errorWrapper {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(255, 124, 168);
+}
+
+.transactionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: -30px;
+  justify-content: space-evenly;
+  z-index: 1000;
+}
+
+.transactionsWrapper > h1 {
+  text-align: center;
+  font-size: 1.6em;
+  margin: 0;
+}
+.statsTransactionsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 82%;
+  margin: 0 auto;
+  margin-top: -20px;
+  gap: 20px;
+  box-shadow: -2px -1px 6px 1px rgba(0, 0, 0, 0.32);
+  z-index: 1000;
+}
+
+.statsTransactionsWrapper > h1 {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 1.6em;
+  color: rgb(255, 72, 136);
+}
+
+.budgetWrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.tansactionsHeading {
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 130px);
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.expensesWrapper {
+  display: flex;
+  margin-top: 40px;
+  gap: 10px;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  height: 200px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+}
+
+.expenseRemove {
+  width: fit-content;
+}
+
+.expenseItem {
+  display: grid;
+  grid-template-columns: repeat(4, 130px);
+  justify-content: space-evenly;
+}
+
+.pieChartWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.barChartWrapper {
+  margin-top: 20px;
+}
+
+.dateSelect {
+  margin-top: 20px;
+}
+
+.dates {
+  word-spacing: 1px;
+}
+
+.expenseAmount {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 42px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 18px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 18px;
+}
+
+input:checked + .slider {
+  background-color: #ff9239;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.monthSelect,
+.yearSelect {
+  background-color: #3a4356;
+  margin-top: 5px;
+  padding: 6px;
+  border: none;
+  outline: none;
+}
+.dateForm {
+  display: flex;
+  gap: 5px;
+}
+
+.overlay {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.403);
+  z-index: 1001;
+}
+.budgetModal {
+  position: absolute;
+
+  top: 30%;
+  z-index: 1002;
+}
+.budgetModal > form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.budgetModal > form > input {
+  padding: 6px 6px;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.1em;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgb(255, 72, 136);
+}
+
+.budgetModal > form > label {
+  font-size: 1.2em;
+}
+.monthWrapper,
+.yearWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.monthSelect {
+  margin-left: 5px;
+}
+
+.hide {
+  animation-name: hide;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.show {
+  animation-name: show;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+@keyframes hide {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -70px;
+  }
+}
+
+@keyframes show {
+  0% {
+    left: -70px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

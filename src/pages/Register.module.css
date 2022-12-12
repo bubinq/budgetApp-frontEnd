@@ -1,0 +1,116 @@
+:root {
+  --register-color: rgba(147, 149, 251, 1);
+  --text-color: #3a4356;
+}
+
+.registerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(221, 185, 236, 1) 0%,
+    rgba(147, 149, 251, 1) 100%
+  );
+  height: 100vh;
+  width: 100vw;
+}
+
+.registerContent {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  background: #f6f8fb;
+  padding: 14px 28px;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.registerContent h3 {
+  text-align: center;
+  font-size: 1.3em;
+  color: var(--text-color);
+  margin-bottom: 0;
+  caret-color: transparent;
+}
+
+.emailWrapper,
+.passwordWrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.labels {
+  position: absolute;
+  top: 25%;
+  left: 4%;
+  z-index: 1;
+  transition: all 0.3s ease;
+  caret-color: transparent;
+}
+
+.registerContent input {
+  font-size: 1em;
+  width: 95%;
+  padding: 14px 8px;
+}
+
+.registerContent input::placeholder {
+  visibility: hidden;
+}
+.registerContent input:focus::placeholder {
+  visibility: visible;
+}
+
+.textWrapper {
+  margin: 16px auto;
+  caret-color: transparent;
+}
+
+.textWrapper span {
+  font-weight: 100;
+  color: var(--text-color);
+  font-size: 1.1em;
+}
+
+.textWrapper em {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.authBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.authBtn button {
+  cursor: pointer;
+  margin: 44px 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  background-color: var(--register-color);
+  border: none;
+  border-radius: 4px;
+  width: 90%;
+  color: #f6f8fb;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.authBtn button:hover {
+  background-color: white;
+  color: var(--register-color);
+  outline: 2px solid var(--register-color);
+}
+
+.focused {
+  position: absolute;
+  color: var(--text-color);
+  font-size: 0.7rem;
+  top: 1%;
+  left: 1%;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
