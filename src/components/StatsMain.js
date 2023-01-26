@@ -7,7 +7,7 @@ import { StatsTransactions } from "./StatsTransactions";
 
 export const StatsMain = () => {
   const theme = useTheme();
-  const [year, setYear] = useState(2022);
+  const [year, setYear] = useState(2023);
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const { data, options } = useGooglePieData(year, month);
   const { barData, barOptions } = useGoogleBarData(year, month);
@@ -37,7 +37,6 @@ export const StatsMain = () => {
                 name="year"
                 onChange={yearHandler}
               >
-                <option value={2015}>2015</option>
                 <option value={2016}>2016</option>
                 <option value={2017}>2017</option>
                 <option value={2018}>2018</option>
@@ -45,6 +44,7 @@ export const StatsMain = () => {
                 <option value={2020}>2020</option>
                 <option value={2021}>2021</option>
                 <option value={2022}>2022</option>
+                <option value={2023}>2023</option>
               </select>
             </div>
             <div className="monthWrapper">
