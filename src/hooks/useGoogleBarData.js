@@ -76,6 +76,7 @@ export const useGoogleBarData = (year, month) => {
     setAmounts([]);
     getLastThreeMonthsAmounts(parseInt(year), parseInt(month)).then((data) => {
       let prevMonthIdx = 0;
+      console.log(data);
       data.forEach((currMonth) => {
         if (month - (currMonth.month + prevMonthIdx) === 2) {
           setAmounts([{}, {}, currMonth]);
