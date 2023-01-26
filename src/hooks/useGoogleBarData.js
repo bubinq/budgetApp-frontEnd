@@ -77,17 +77,21 @@ export const useGoogleBarData = (year, month) => {
     getLastThreeMonthsAmounts(parseInt(year), parseInt(month)).then((data) => {
       let prevMonthIdx = 0;
       console.log(data);
-      data.forEach((currMonth) => {
-        if (month - (currMonth.month + prevMonthIdx) === 2) {
-          setAmounts([{}, {}, currMonth]);
-        } else if (month - (currMonth.month + prevMonthIdx) === 1) {
+      if (data.length === 3) {
+        setAmounts(data);
+      } else {
+        data.forEach((currMonth) => {
+          if (month - (currMonth.month + prevMonthIdx) === 2) {
+            setAmounts([{}, {}, currMonth]);
+          } else if (month - (currMonth.month + prevMonthIdx) === 1) {
+            prevMonthIdx++;
+            setAmounts((oldAmounts) => [...oldAmounts, {}, currMonth]);
+          } else {
+            setAmounts((oldAmounts) => [...oldAmounts, currMonth]);
+          }
           prevMonthIdx++;
-          setAmounts((oldAmounts) => [...oldAmounts, {}, currMonth]);
-        } else {
-          setAmounts((oldAmounts) => [...oldAmounts, currMonth]);
-        }
-        prevMonthIdx++;
-      });
+        });
+      }
     });
     //eslint-disable-next-line
   }, [year, month, expenses]);
