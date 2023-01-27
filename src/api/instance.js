@@ -17,19 +17,19 @@ export const getLastThreeMonthsAmounts = async (year, month) => {
   const months = new Array(3).fill({});
   for (let i = 0; i < response.data.length; i++) {
     let currMonth = response.data[i]._id.month;
-    let currYear = response.data[i].year;
-    let totalAmount = response.data[i].totalAmount;
-    if (year > currYear) {
-      currMonth = 0 + i;
+    let diffIdx = month - currMonth;
+    if (diffIdx < 0) {
+      diffIdx = month + i;
     }
-    months[month - currMonth] = { month: currMonth, total: totalAmount, year: currYear };
+    let totalAmount = response.data[i].totalAmount;
+    months[diffIdx] = { month: currMonth, total: totalAmount };
     for (let j = 0; j < response.data[i].categories.length; j++) {
       const currCateg = response.data[i].categories[j];
       const val = response.data[i].amounts[j];
-      if (months[month - currMonth].hasOwnProperty(currCateg)) {
-        months[month - currMonth][currCateg] += val;
+      if (months[diffIdx].hasOwnProperty(currCateg)) {
+        months[diffIdx][currCateg] += val;
       } else {
-        months[month - currMonth][currCateg] = val;
+        months[diffIdx][currCateg] = val;
       }
     }
   }
