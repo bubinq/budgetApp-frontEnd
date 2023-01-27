@@ -75,23 +75,20 @@ export const useGoogleBarData = (year, month) => {
   useEffect(() => {
     setAmounts([]);
     getLastThreeMonthsAmounts(parseInt(year), parseInt(month)).then((data) => {
-      let prevMonthIdx = 0;
       console.log(data);
-      if (data.length === 3) {
-        setAmounts(data);
-      } else {
-        data.forEach((currMonth) => {
-          if (month - (currMonth.month + prevMonthIdx) === 2) {
-            setAmounts([{}, {}, currMonth]);
-          } else if (month - (currMonth.month + prevMonthIdx) === 1) {
-            prevMonthIdx++;
-            setAmounts((oldAmounts) => [...oldAmounts, {}, currMonth]);
-          } else {
-            setAmounts((oldAmounts) => [...oldAmounts, currMonth]);
-          }
-          prevMonthIdx++;
-        });
-      }
+      setAmounts(data);
+      // let prevMonthIdx = 0;
+      // data.forEach((currMonth) => {
+      //   if (month - (currMonth.month + prevMonthIdx) === 2) {
+      //     setAmounts([{}, {}, currMonth]);
+      //   } else if (month - (currMonth.month + prevMonthIdx) === 1) {
+      //     prevMonthIdx++;
+      //     setAmounts((oldAmounts) => [...oldAmounts, {}, currMonth]);
+      //   } else {
+      //     setAmounts((oldAmounts) => [...oldAmounts, currMonth]);
+      //   }
+      //   prevMonthIdx++;
+      // });
     });
     //eslint-disable-next-line
   }, [year, month, expenses]);

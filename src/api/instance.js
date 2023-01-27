@@ -13,13 +13,14 @@ export const getLastThreeMonthsAmounts = async (year, month) => {
     },
     { withCredentials: true }
   );
+  console.log(response.data);
   const months = new Array(3).fill({});
   for (let i = 0; i < response.data.length; i++) {
     let currMonth = response.data[i]._id.month;
     let currYear = response.data[i].year;
     let totalAmount = response.data[i].totalAmount;
     if (year > currYear) {
-      currMonth = 0 - i;
+      currMonth = 0 + i;
     }
     months[month - currMonth] = { month: currMonth, total: totalAmount, year: currYear };
     for (let j = 0; j < response.data[i].categories.length; j++) {
