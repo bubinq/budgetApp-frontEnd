@@ -13,7 +13,6 @@ export const getLastThreeMonthsAmounts = async (year, month) => {
     },
     { withCredentials: true }
   );
-  console.log(response.data);
   const months = new Array(3).fill({});
   for (let i = 0; i < response.data.length; i++) {
     let currMonth = response.data[i]._id.month;

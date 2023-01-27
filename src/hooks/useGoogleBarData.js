@@ -73,22 +73,8 @@ export const useGoogleBarData = (year, month) => {
     hAxis: { textColor: theme.text },
   };
   useEffect(() => {
-    setAmounts([]);
     getLastThreeMonthsAmounts(parseInt(year), parseInt(month)).then((data) => {
-      console.log(data);
       setAmounts(data);
-      // let prevMonthIdx = 0;
-      // data.forEach((currMonth) => {
-      //   if (month - (currMonth.month + prevMonthIdx) === 2) {
-      //     setAmounts([{}, {}, currMonth]);
-      //   } else if (month - (currMonth.month + prevMonthIdx) === 1) {
-      //     prevMonthIdx++;
-      //     setAmounts((oldAmounts) => [...oldAmounts, {}, currMonth]);
-      //   } else {
-      //     setAmounts((oldAmounts) => [...oldAmounts, currMonth]);
-      //   }
-      //   prevMonthIdx++;
-      // });
     });
     //eslint-disable-next-line
   }, [year, month, expenses]);
