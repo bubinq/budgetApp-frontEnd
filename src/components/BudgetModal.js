@@ -10,7 +10,7 @@ export const BudgetModal = ({ show, type, current }) => {
 
   const submitNewBudget = async (ev) => {
     ev.preventDefault();
-    if (type === "Decrease" && current < allocated) {
+    if (type === "Withdraw" && current < allocated) {
       alert("Cannot withdraw more than currently available!")
       return;
     }
