@@ -108,7 +108,7 @@ export const BudgetForm = () => {
         <>
           <div className="budgetWrapper">
             <BsPlusCircle
-              onClick={() => showBudgetModalHandler("Increase")}
+              onClick={() => showBudgetModalHandler("Deposit")}
               style={{
                 color: theme.text,
                 width: "20px",
@@ -120,7 +120,7 @@ export const BudgetForm = () => {
               Initial: ${budget.amount}
             </span>
             <FiMinusCircle
-              onClick={() => showBudgetModalHandler("Decrease")}
+              onClick={() => showBudgetModalHandler("Withdraw")}
               style={{
                 color: theme.text,
                 width: "20px",

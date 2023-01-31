@@ -38,7 +38,7 @@ export const BudgetModal = ({ show, type, current }) => {
       ></div>
       <div className="budgetModal">
         <form onSubmit={submitNewBudget}>
-          <label htmlFor="amount" style={{color: theme.text}}>{type} By:</label>
+          <label htmlFor="amount" style={{color: theme.text}}>{type} Amount:</label>
           <input
             id="amount"
             name="amount"
@@ -49,6 +49,7 @@ export const BudgetModal = ({ show, type, current }) => {
               setAllocated(ev.target.value);
             }}
           ></input>
+          <button className="budgetBtn" type="submit">{type}</button>
         </form>
       </div>
     </>

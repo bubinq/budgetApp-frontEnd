@@ -496,6 +496,27 @@ input:checked + .slider:before {
 .budgetModal > form > label {
   font-size: 1.2em;
 }
+
+.budgetBtn {
+  margin: 0 auto;
+  outline: 1px solid black;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  background-color: rgb(255, 72, 136);
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.budgetBtn:hover {
+  background-color: transparent;
+  outline: 1px solid rgb(255, 72, 136);
+  color: rgb(255, 72, 136);
+}
 .monthWrapper,
 .yearWrapper {
   display: flex;
@@ -554,3 +575,4 @@ input:checked + .slider:before {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
