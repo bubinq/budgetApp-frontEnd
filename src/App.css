@@ -544,13 +544,13 @@ input:checked + .slider:before {
     left: 0px;
   }
   100% {
-    left: -20vw;
+    left: -16vw;
   }
 }
 
 @keyframes show {
   0% {
-    left: -20vw;
+    left: -16vw;
   }
   100% {
     left: 0px;
@@ -584,7 +584,7 @@ input:checked + .slider:before {
     font-size: 5.4vw;
   }
   span {
-    font-size: 4.2vw;
+    font-size: 4vw;
   }
   .menu {
     padding-left: 12px;
@@ -616,8 +616,8 @@ input:checked + .slider:before {
     height: auto;
   }
   .sideWrapper {
-    width: 20vw;
-    height: 100%;
+    width: 16vw;
+    height: 12vh;
   }
   .contentWrapper {
     height: auto;
@@ -663,6 +663,9 @@ input:checked + .slider:before {
   }
   .dateSelect {
     margin-left: 12px;
+  }
+  .statsTransactionsWrapper {
+    margin-bottom: 30px;
   }
   .pieChartWrapper {
     align-items: center;
