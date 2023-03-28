@@ -3,8 +3,10 @@ import { Expense } from "./Expense";
 import { instance } from "../api/instance";
 import { BudgetContext } from "../context/budgetContext";
 import { ExpenseContext } from "../context/expenseContext";
+import { useWindowResize } from "../hooks/useWindowResize";
 
 export const StatsTransactions = ({ year, month }) => {
+  const size = useWindowResize();
   const [expenses, setExpenses] = useState([]);
   const { user } = useContext(BudgetContext);
   const { expensesStorage } = useContext(ExpenseContext);
@@ -29,8 +31,10 @@ export const StatsTransactions = ({ year, month }) => {
   return (
     <div className="statsTransactionsWrapper">
       <h1>Transactions</h1>
-      <div className="tansactionsHeading">
-        <span style={{ color: "rgb(255, 72, 136)" }}>Date</span>
+      <div className="transactionsHeading">
+        {size.width > 578 && (
+          <span style={{ color: "rgb(255, 72, 136)" }}>Date</span>
+        )}
         <span style={{ color: "rgb(255, 72, 136)" }}>Category</span>
         <span style={{ color: "rgb(255, 72, 136)" }}>Amount</span>
         <span style={{ color: "rgb(255, 72, 136)" }}>Remove</span>

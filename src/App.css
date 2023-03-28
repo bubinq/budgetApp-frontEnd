@@ -661,4 +661,10 @@ input:checked + .slider:before {
   .expenseItem {
     grid-template-columns: repeat(3, 61px);
   }
+  .dateSelect {
+    margin-left: 12px;
+  }
+  .pieChartWrapper {
+    align-items: center;
+  }
 }

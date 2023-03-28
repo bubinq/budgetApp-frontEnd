@@ -4,8 +4,10 @@ import { useGooglePieData } from "../hooks/useGooglePieData";
 import { useTheme } from "../hooks/useTheme";
 import { useGoogleBarData } from "../hooks/useGoogleBarData";
 import { StatsTransactions } from "./StatsTransactions";
+import { useWindowResize } from "../hooks/useWindowResize";
 
 export const StatsMain = () => {
+  const size = useWindowResize();
   const theme = useTheme();
   const [year, setYear] = useState(2023);
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -87,7 +89,7 @@ export const StatsMain = () => {
         <div className="barChartWrapper">
           <Chart
             chartType="BarChart"
-            width={"550px"}
+            width={size.width > 578 ? "550px" : "350px"}
             height={"350px"}
             data={barData}
             options={barOptions}
