@@ -200,8 +200,8 @@ body {
 
 .chartWrapper > canvas {
   padding: 15px;
-  width: 325px;
-  height: 325px;
+  width: 325px !important;
+  height: 325px !important;
 }
 
 .graphLabelWrapper {
@@ -343,7 +343,7 @@ select {
   gap: 8px;
 }
 
-.tansactionsHeading {
+.transactionsHeading {
   display: grid;
   width: 80%;
   margin: 0 auto;
@@ -544,13 +544,13 @@ input:checked + .slider:before {
     left: 0px;
   }
   100% {
-    left: -70px;
+    left: -20vw;
   }
 }
 
 @keyframes show {
   0% {
-    left: -70px;
+    left: -20vw;
   }
   100% {
     left: 0px;
@@ -576,3 +576,89 @@ input:checked + .slider:before {
   background: #555;
 }
 
+@media only screen and (max-width: 574px){
+  body {
+    overflow: auto;
+  }
+  h1 {
+    font-size: 5.4vw;
+  }
+  span {
+    font-size: 4.2vw;
+  }
+  .menu {
+    padding-left: 12px;
+    user-select: none;
+  }
+  .menu:hover {
+    outline: none;
+  }
+  .heading {
+    font-size: 3.1vw;
+    letter-spacing: normal;
+  }
+
+  .dropDownHeading > span {
+    font-size: 4.8vw;
+  }
+  .themeSlider {
+    justify-content: space-around;
+    width: 98%;
+  }
+  .themeText {
+    margin-left: 12px;
+  }
+  .profileSection {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .headerWrapper {
+    height: auto;
+  }
+  .sideWrapper {
+    width: 20vw;
+    height: 100%;
+  }
+  .contentWrapper {
+    height: auto;
+  }
+  .mainWrapper {
+    flex-direction: column;
+  }
+  .chartWrapper {
+    margin-top: 10px;
+  }
+  .chartWrapper > canvas {
+    padding: 5px;
+    width: 205px !important;
+    height: 205px !important;
+  }
+  .graphLabelWrapper {
+    left:70.5%;
+    top: 16%;
+  }
+  .budgetTotal {
+    margin-top: 10px;
+  }
+  .stepsHeading {
+    font-size: 3.3vw;
+  }
+  .transactionsWrapper {
+    margin-top: 10px;
+    gap: 10px;
+  }
+  .transactionsWrapper > h1 {
+    font-size: 5.4vw;
+  }
+  .transactionsHeading {
+    display: flex;
+    gap: 1px;
+  }
+  .expensesWrapper {
+    gap: 5px;
+    height: 150px;
+  }
+  .expenseItem {
+    grid-template-columns: repeat(3, 61px);
+  }
+}

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { ExpenseContext } from "../context/expenseContext";
+import { useWindowResize } from "./useWindowResize";
 import _ from "lodash";
 
 export function useGraphData() {
   const { expenses } = useContext(ExpenseContext);
+  const size = useWindowResize();
 
   const colors = _.chain(expenses)
     .map((obj) => obj.color)
@@ -25,14 +27,14 @@ export function useGraphData() {
           backgroundColor: colors,
           hoverOffset: 3,
           borderRadius: 25,
-          spacing: 20,
+          spacing: size.width < 578 ? 15 : 20,
         },
       ],
     },
 
     options: {
-      cutout: 125,
-      radius: 150,
+      cutout: size.width < 578 ? 80 : 120,
+      radius: size.width < 578 ? 80 : 150,
     },
   };
   return config;

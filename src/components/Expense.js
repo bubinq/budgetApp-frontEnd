@@ -1,4 +1,5 @@
 import { useTheme } from "../hooks/useTheme";
+import { useWindowResize } from "../hooks/useWindowResize";
 import dayjs from "dayjs";
 import { BiTrash } from "react-icons/bi";
 import { instance } from "../api/instance";
@@ -7,6 +8,7 @@ import { ExpenseContext } from "../context/expenseContext";
 
 export const Expense = ({ data }) => {
   const theme = useTheme();
+  const size = useWindowResize();
   const { dispatcher } = useContext(ExpenseContext);
 
   const removeExpenseHandler = async () => {
@@ -22,13 +24,15 @@ export const Expense = ({ data }) => {
   };
   return (
     <div className="expenseItem">
-      <div className="expenseDate">
-        {" "}
-        <span className="dates" style={{ color: theme.text }}>
+      {size.width > 574 && (
+        <div className="expenseDate">
           {" "}
-          {dayjs(data.createdAt).format("DD. MM - HH:mm ")}
-        </span>
-      </div>
+          <span className="dates" style={{ color: theme.text }}>
+            {" "}
+            {dayjs(data.createdAt).format("DD. MM - HH:mm ")}
+          </span>
+        </div>
+      )}
       <div className="expenseCategory">
         <span style={{ color: theme.text }}>{data.category} </span>
       </div>
